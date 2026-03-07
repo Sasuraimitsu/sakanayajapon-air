@@ -808,28 +808,37 @@ const Cart = {
   },
 
   /** Telegram注文メッセージを生成 */
-  // index.html の下の方にある Cart オブジェクトの buildOrderMessage を以下に差し替え
   buildOrderMessage(lang, notes) {
     const items = Object.values(this.items);
     const total = this.getTotal();
-    const totalQty = this.getTotalQty(); // 合計点数を取得
 
     let msg = lang === 'ja'
-      ? `🏮 【SAKANAYA JAPON 注文依頼】\n──────────────────\n`
-      : `🏮 [ORDER INQUIRY - SAKANAYA JAPON]\n──────────────────\n`;
+      ? `📦 【注文】SAKANAYA JAPON
+
+`
+      : `📦 [ORDER] SAKANAYA JAPON
+
+`;
 
     items.forEach(({ product: p, qty }) => {
       const name = lang === 'ja' ? p.name_ja : p.name_en;
-      msg += `・${name}\n  ${qty} ${p.unit} × $${p.price.toFixed(2)} = $${(p.price * qty).toFixed(2)}\n`;
+      msg += `・${name}
+  ${qty} ${p.unit} × $${p.price.toFixed(2)} = $${(p.price * qty).toFixed(2)}
+`;
     });
 
-    msg += `\n──────────────────\n`;
+    msg += `
+${'─'.repeat(26)}
+`;
     msg += lang === 'ja'
-      ? `💴 合計金額: $${total.toFixed(2)}\n📦 合計点数: ${totalQty.toFixed(1)} 点\n（※配送料別）`
-      : `💴 Total: $${total.toFixed(2)}\n📦 Qty: ${totalQty.toFixed(1)} items\n(*Excl. delivery)`;
+      ? `💴 合計: $${total.toFixed(2)}（配送料別）
+`
+      : `💴 Total: $${total.toFixed(2)} (excl. delivery)
+`;
 
     if (notes) {
-      msg += `\n\n📝 ${lang === 'ja' ? '【備考】' : '[Notes]'}\n${notes}`;
+      msg += `
+📝 ${lang === 'ja' ? '備考' : 'Notes'}: ${notes}`;
     }
 
     return msg;
