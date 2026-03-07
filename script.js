@@ -451,8 +451,8 @@ const Cart = {
     const total = this.getTotal();
 
     let msg = lang === 'ja'
-      ? `📦 【注文】SAKANAYA JAPON\n\n`
-      : `📦 [ORDER] SAKANAYA JAPON\n\n`;
+  ? `📦 【SAKANAYA JAPON 注文依頼】\n\n`
+  : `📦 【SAKANAYA JAPON 注文依頼】\n\n`;
 
     items.forEach(({ product: p, qty }) => {
       const name = lang === 'ja' ? p.name_ja : p.name_en;
