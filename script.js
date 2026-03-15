@@ -5,7 +5,7 @@
 
 const CONFIG = {
   // GAS Web App URL（デプロイ後のURL）
-  API_URL: "https://script.google.com/macros/s/AKfycbw7pWe_w-vxUKrsMTXpLMfRZwrrjqoxVbeZDRO-QSDDTlnghdES0Lu8d4pnI7E7hNCw/exec",
+  API_URL: "https://script.google.com/macros/s/AKfycbzthp9D6CJLpEeBNvczXfh-YlFwOxM0hQiMteH5Kknl0gaJB2S6_ddjhIdfTJKm_Bja/exec",
 
   // TelegramのBotユーザーネーム（@なし）
   TELEGRAM_BOT: "sakanaya_bot",
