@@ -488,7 +488,7 @@ const API = {
   /** 商品マスターをGASから取得 */
   async fetchProducts() {
     const url = `${CONFIG.API_URL}?action=products`;
-    const res = await fetch(url);
+    const res = await fetch(url, { redirect: 'follow' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     if (data.error) throw new Error(data.error);
