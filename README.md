@@ -7,6 +7,8 @@
 - リポジトリ: https://github.com/sakanaya-japon/sakanaya-productlist
 - 公開URL: https://sakanaya-japon.github.io/sakanaya-productlist/
 
+ご注文・お問い合わせ窓口は https://t.me/sakanayaorder です。
+
 後継版は Google Apps Script から商品・価格を動的に取得し、顧客登録・在庫表示・
 Excel出力・Telegram Bot 連携に対応しています。本リポジトリの内容は使用しないでください。
 
